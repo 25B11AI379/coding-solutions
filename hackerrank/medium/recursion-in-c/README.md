@@ -52,7 +52,7 @@ Print the *n<sup>th</sup>* term of the series, $S(n)$.
 **Language:** C  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-17T19:49:40.374Z  
+**Submitted:** 2026-09-17T19:49:48.906Z  
 
 ```c
 #include <stdio.h>

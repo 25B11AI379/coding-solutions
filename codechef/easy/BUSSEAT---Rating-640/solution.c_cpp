@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int T;
+    cin >> T;
+    while (T > 0) {
+        long long N, K;
+        cin >> N >> K;
+        long long available = N;
+        long long sitting=0;
+        for (int i = 1; i <= K; i++) {
+            if (available > 0) {
+                available--;
+            } else {
+                sitting++;
+            }
+        }
+        cout <<sitting*2<< "\n";
+        T--;
+    }
+    
+    return 0;
+}

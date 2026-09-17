@@ -1,31 +1,23 @@
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
 #include <stdlib.h>
+//Complete the following function.
+
+int find_nth_term(int n, int a, int b, int c) {
+  //Write your code here.
+  if (n == 1) return a;
+    if (n == 2) return b;
+    if (n == 3) return c;
+    return find_nth_term(n-1,a,b,c)+find_nth_term(n-2,a,b,c)+find_nth_term(n-3,a,b,c);
+}
 
 int main() {
-    int n;
-    scanf("%d", &n);
-
-    if (n == 1) {
-        printf("one\n");
-    } else if (n == 2) {
-        printf("two\n");
-    } else if (n == 3) {
-        printf("three\n");
-    } else if (n == 4) {
-        printf("four\n");
-    } else if (n == 5) {
-        printf("five\n");
-    } else if (n == 6) {
-        printf("six\n");
-    } else if (n == 7) {
-        printf("seven\n");
-    } else if (n == 8) {
-        printf("eight\n");
-    } else if (n == 9) {
-        printf("nine\n");
-    } else {
-        printf("Greater than 9\n");
-    }
-
+    int n, a, b, c;
+  
+    scanf("%d %d %d %d", &n, &a, &b, &c);
+    int ans = find_nth_term(n, a, b, c);
+ 
+    printf("%d", ans); 
     return 0;
 }

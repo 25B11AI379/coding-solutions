@@ -1,23 +1,37 @@
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
 #include <stdlib.h>
-//Complete the following function.
+#include <string.h>
 
-int find_nth_term(int n, int a, int b, int c) {
-  //Write your code here.
-  if (n == 1) return a;
-    if (n == 2) return b;
-    if (n == 3) return c;
-    return find_nth_term(n-1,a,b,c)+find_nth_term(n-2,a,b,c)+find_nth_term(n-3,a,b,c);
+int next_permutation(int n, char **s)
+{
+	/**
+	* Complete this method
+	* Return 0 when there is no next permutation and 1 otherwise
+	* Modify array s to its next permutation
+	*/
+    int i = n - 2;
+    while (i >= 0 && strcmp(s[i], s[i + 1]) >= 0) {
+        i--;
+    }
+    if (i < 0) {
+        return 0;
+    }
+    int j = n - 1;
+    while (strcmp(s[i], s[j]) >= 0) {
+        j--;
+    }
+    char *temp = s[i];
+    s[i] = s[j];
+    s[j] = temp;
+    int left = i + 1;
+    int right = n - 1;
+    while (left < right) {
+        temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        left++;
+        right--;
+    }
+    return 1;
 }
 
-int main() {
-    int n, a, b, c;
-  
-    scanf("%d %d %d %d", &n, &a, &b, &c);
-    int ans = find_nth_term(n, a, b, c);
- 
-    printf("%d", ans); 
-    return 0;
-}

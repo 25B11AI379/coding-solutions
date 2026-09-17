@@ -7,25 +7,35 @@ import re
 import sys
 
 #
-# Complete the 'simpleArraySum' function below.
+# Complete the 'compareTriplets' function below.
 #
-# The function is expected to return an INTEGER.
-# The function accepts INTEGER_ARRAY ar as parameter.
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts following parameters:
+#  1. INTEGER_ARRAY a
+#  2. INTEGER_ARRAY b
 #
 
-def simpleArraySum(ar):
+def compareTriplets(a, b):
     # Write your code here
-    return sum(ar)
+    alice_score=0
+    bob_score=0
+    for x, y in zip(a, b):
+        if x>y:
+            alice_score+=1
+        elif x<y:
+            bob_score+=1
+    return [alice_score, bob_score]
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    ar_count = int(input().strip())
+    a = list(map(int, input().rstrip().split()))
 
-    ar = list(map(int, input().rstrip().split()))
+    b = list(map(int, input().rstrip().split()))
 
-    result = simpleArraySum(ar)
+    result = compareTriplets(a, b)
 
-    fptr.write(str(result) + '\n')
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
 
     fptr.close()

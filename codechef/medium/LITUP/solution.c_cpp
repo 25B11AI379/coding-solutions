@@ -1,0 +1,57 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int T;
+    if (!(cin >> T)) return 0;
+    while (T--) {
+        long long N, K;
+        cin >> N >> K;
+        vector<long long> C(N + 1);
+        for (int i = 1; i <= N; ++i) {
+            cin >> C[i];
+        }
+        long long min_total_cost = -1;
+        int max_i_bound = min((long long)N, K + 1);
+        vector<long long> prefix_min_cost(max_i_bound + 1, -1);
+        vector<int> best_i_index(max_i_bound + 1, -1);
+        long long current_min = -1;
+        int current_best_idx = -1;
+
+        for (int i = 1; i <= max_i_bound; ++i) {
+            if (current_min == -1 || C[i] < current_min) {
+                current_min = C[i];
+                current_best_idx = i;
+            }
+            prefix_min_cost[i] = current_min;
+            best_i_index[i] = current_best_idx;
+        }
+        int min_j_bound = max(1LL, N - K);
+        for (int j = min_j_bound; j <= N; ++j) {
+            int min_needed_i = max(1LL, j - 2 * K - 1);
+            int max_possible_i = min((int)max_i_bound, j - 1);
+            if (min_needed_i <= max_possible_i) {
+                int best_idx = best_i_index[max_possible_i];
+                if (best_idx >= min_needed_i) {
+                    long long cost = C[j] + C[best_idx];
+                    if (min_total_cost == -1 || cost < min_total_cost) {
+                        min_total_cost = cost;
+                    }
+                } else {
+                    for (int i = min_needed_i; i <= max_possible_i; ++i) {
+                        long long cost = C[i] + C[j];
+                        if (min_total_cost == -1 || cost < min_total_cost) {
+                            min_total_cost = cost;
+                        }
+                    }
+                }
+            }
+        }
+        cout << min_total_cost << "\n";
+    }
+
+    return 0;
+}

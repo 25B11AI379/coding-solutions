@@ -5,5 +5,6 @@
     2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
     3. Type your code immediately after comment. Don't leave any blank line.
 */
-SELECT DISTINCT CITY from STATION 
-WHERE SUBSTR(LOWER(CITY), 1, 1) NOT IN ('a', 'e', 'i', 'o', 'u') and LOWER(SUBSTR(CITY, LENGTH(CITY), 1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+select NAME from STUDENTS 
+where MARKS>75 
+order by right(NAME,3) ASC, ID asc;

@@ -1,4 +1,4 @@
-# Weather Observation Station 4
+# Weather Observation Station 5
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -27,7 +27,7 @@ where **LAT\_N** is the northern latitude and **LONG\_W** is the western longitu
 **Language:** db2  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T17:36:37.953Z  
+**Submitted:** 2026-09-24T17:40:02.026Z  
 
 ```db2
 
@@ -37,7 +37,14 @@ where **LAT\_N** is the northern latitude and **LONG\_W** is the western longitu
     2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
     3. Type your code immediately after comment. Don't leave any blank line.
 */
-select count(city)-count(distinct city) from STATION;
+SELECT CITY,LENGTH(CITY) 
+from STATION 
+ORDER BY LENGTH(CITY) ASC,CITY ASC
+ FETCH FIRST 1 ROWS only;
+ SELECT CITY,LENGTH(CITY) 
+from STATION 
+ORDER BY LENGTH(CITY) DESC,CITY DESC
+ FETCH FIRST 1 ROWS only;
 
 ```
 

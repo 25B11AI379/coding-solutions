@@ -6,4 +6,4 @@
     3. Type your code immediately after comment. Don't leave any blank line.
 */
 SELECT DISTINCT CITY from STATION 
-where lower(substr(CITY,LENGTH(CITY),1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+WHERE SUBSTR(LOWER(CITY), 1, 1) NOT IN ('a', 'e', 'i', 'o', 'u') or LOWER(SUBSTR(CITY, LENGTH(CITY), 1)) NOT IN ('a', 'e', 'i', 'o', 'u');

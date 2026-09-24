@@ -1,4 +1,4 @@
-# Weather Observation Station 1
+# Weather Observation Station 3
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -26,7 +26,7 @@ where **LAT\_N** is the northern latitude and **LONG\_W** is the western longitu
 **Language:** db2  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T17:32:01.604Z  
+**Submitted:** 2026-09-24T17:34:40.592Z  
 
 ```db2
 
@@ -36,7 +36,7 @@ where **LAT\_N** is the northern latitude and **LONG\_W** is the western longitu
     2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
     3. Type your code immediately after comment. Don't leave any blank line.
 */
-select CITY,STATE from STATION ;
+select DISTINCT CITY from STATION where MOD(ID,2)=0;
 
 ```
 

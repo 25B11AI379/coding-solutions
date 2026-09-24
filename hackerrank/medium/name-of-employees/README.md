@@ -1,4 +1,4 @@
-# Higher Than 75 Marks
+# Employee Names
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -25,7 +25,7 @@ where _employee\_id_ is an employee's ID number, _name_ is their name, _months_ 
 **Language:** db2  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T18:02:41.590Z  
+**Submitted:** 2026-09-24T18:10:16.493Z  
 
 ```db2
 
@@ -35,9 +35,8 @@ where _employee\_id_ is an employee's ID number, _name_ is their name, _months_ 
     2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
     3. Type your code immediately after comment. Don't leave any blank line.
 */
-select NAME from STUDENTS 
-where MARKS>75 
-order by right(NAME,3) ASC, ID asc;
+SELECT NAME From Employee
+ORDER BY name ASC;
 
 ```
 

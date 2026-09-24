@@ -1,4 +1,4 @@
-# Employee Names
+# Employee Salaries
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -25,7 +25,7 @@ where _employee\_id_ is an employee's ID number, _name_ is their name, _months_ 
 **Language:** db2  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T18:10:30.433Z  
+**Submitted:** 2026-09-24T18:14:59.904Z  
 
 ```db2
 
@@ -35,8 +35,9 @@ where _employee\_id_ is an employee's ID number, _name_ is their name, _months_ 
     2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
     3. Type your code immediately after comment. Don't leave any blank line.
 */
-SELECT NAME From Employee
-ORDER BY name ASC;
+SELECT name from Employee
+where salary > 2000 and months <10
+order by employee_id asc;
 
 ```
 

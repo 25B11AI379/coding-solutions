@@ -1,4 +1,4 @@
-# Employee Salaries
+# Population Census
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -24,22 +24,16 @@ The **CITY** and **COUNTRY** tables are described as follows:
 
 ## Solution
 
-**Language:** db2  
+**Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T18:15:13.552Z  
+**Submitted:** 2026-09-24T18:25:56.528Z  
 
-```db2
-
-/*
-    Enter your query here and follow these instructions:
-    1. Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
-    2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
-    3. Type your code immediately after comment. Don't leave any blank line.
-*/
-SELECT name from Employee
-where salary > 2000 and months <10
-order by employee_id asc;
+```sql
+SELECT SUM(CITY.POPULATION)
+FROM CITY
+JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code
+WHERE COUNTRY.CONTINENT = 'Asia';
 
 ```
 

@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        long long k;
+        cin >> n >> k;
+        long long ans = -1;
+        long long min_moves = -1;
+        for (int i = 0; i < n; i++) {
+            long long p;
+            cin >> p;
+            if (k % p == 0) {
+                long long moves = (k / p) - 1;
+                if (min_moves == -1 || moves < min_moves) {
+                    min_moves = moves;
+                    ans = p;
+                }
+            }
+        }
+        cout << ans << "\n";
+    }
+}

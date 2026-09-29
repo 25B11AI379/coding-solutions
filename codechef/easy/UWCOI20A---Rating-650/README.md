@@ -39,7 +39,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T18:06:07.651Z  
+**Submitted:** 2026-09-29T17:53:22.867Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -47,7 +47,7 @@ using namespace std;
 
 int main() {
 	// your code goes here
-int t;
+	int t;
     cin>>t;
     while(t--){
         int n;

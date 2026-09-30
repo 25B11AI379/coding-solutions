@@ -54,7 +54,7 @@ No
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T14:56:03.215Z  
+**Submitted:** 2026-09-30T14:56:25.909Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -67,7 +67,7 @@ int main() {
 	while(t--){
 	    int n,m;
 	    cin>>n>>m;
-	    if(n%2!=0 || m%2!=0){
+	    if(n%2==0 || m%2==0){
 	        cout<<"Yes"<<endl;
 	    }
 	    else{

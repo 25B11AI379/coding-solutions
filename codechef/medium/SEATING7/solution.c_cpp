@@ -9,18 +9,21 @@ int main() {
 	    int n,m,k;
 	    cin>>n>>m>>k;
 	    int a[m];
-	    vector<bool> occupied(n + 1, false);
-        for (int i = 0; i < m; i++) {
+	    vector<bool>occupied(n+1,false);
+        for (int i=0;i<m;i++){
             int seat;
-            cin >> seat;
-            occupied[seat] = true;
+            cin>>seat;
+            occupied[seat]=true;
         }
-        for (int i = 0; i < k; i++) {
-            for (int seat = 1; seat <= n; seat++) {
-                if (!occupied[seat]) {
-                    cout << seat << (i == k - 1 ? "" : " ");
-                    occupied[seat] = true; // Occupy it so the next person can't take it
+        for (int i=0;i<k;i++) {
+            for (int seat=1;seat<=n;seat++) {
+                if (!occupied[seat]){
+                    cout<<seat<<(i==k-1 ? "" : " ");
+                    occupied[seat] = true;
                     break;
                 }
             }
+        }
+        cout<<endl;
+	}
 }

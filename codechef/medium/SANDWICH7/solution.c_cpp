@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int b,h,c;
+	cin>>b>>h>>c;
+	int r=b/2;
+	int t=(h+c);
+	cout<<min(r,t);
+}

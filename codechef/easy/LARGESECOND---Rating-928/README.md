@@ -61,7 +61,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T18:33:47.440Z  
+**Submitted:** 2026-09-30T07:55:09.843Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -76,22 +76,20 @@ int main() {
         int a[n];
         for(int i=0;i<n;i++){
             cin>>a[i];
-        }int firstMax = INT_MIN;
+        }
+        // your code goes here
+        int firstMax = INT_MIN;
         int secondMax = INT_MIN;
-
-        for (int i = 0; i < n; i++) {
-            if (a[i] > firstMax) {
-                secondMax = firstMax;
-                firstMax = a[i];
-            } else if (a[i] > secondMax && a[i] != firstMax) {
-                secondMax = a[i];
+        for (int i=0; i<n; i++) {
+            if (a[i]>firstMax) {
+                secondMax=firstMax;
+                firstMax=a[i];
+            } else if (a[i]>secondMax && a[i]!=firstMax) {
+                secondMax=a[i];
             }
         }
-
-        int maxSum = firstMax + secondMax;
+        int maxSum=firstMax+secondMax;
         cout << maxSum << endl;
-        
-        // your code goes here
     }
 }
 

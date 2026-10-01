@@ -67,22 +67,22 @@ Since all elements of the final array are $2$, the maximum value of the array is
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T15:58:17.768Z  
+**Submitted:** 2026-10-01T05:57:16.689Z  
 
 ```c_cpp
 class Solution {
 public:
     int countNonMinimum(vector<int>& nums) {
         // write your code here 
-        int min_val = nums[0];
-        for (int i = 1; i < nums.size(); i++) {
-            if (nums[i] < min_val) {
-                min_val = nums[i];
+           int min_val = nums[0];
+        for (int x : nums) {
+            if (x < min_val) {
+                min_val = x;
             }
         }
         int operations = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] != min_val) {
+        for (int x : nums) {
+            if (x > min_val) {
                 operations++;
             }
         }

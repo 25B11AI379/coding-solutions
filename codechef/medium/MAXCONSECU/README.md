@@ -50,22 +50,23 @@ The two `1`s at positions 2 and 3 are consecutive, so the maximum streak is `2`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T18:49:09.661Z  
+**Submitted:** 2026-10-04T18:50:52.726Z  
 
 ```c_cpp
 int findMaxConsecutiveOnes(vector<int>& nums) {
     //write code here...
-    int count = 0;
-    int maxCount = 0;
-    for (int num : nums) {
-        if (num == 1) {
-            count++;
-            maxCount = max(maxCount, count);
-        } else {
-            count = 0;
+    int c=0;
+    int max_c=0;
+    for(auto n:nums){
+        if(n==1){
+            c++;
+            max_c=max(max_c,c);
+        }
+        else{
+            c=0;
         }
     }
-    return maxCount;
+    return max_c;
 }
 
 ```

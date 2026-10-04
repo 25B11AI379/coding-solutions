@@ -67,7 +67,7 @@ Therefore, we can clearly see that the maximum amount of money that can be won b
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T13:23:18.184Z  
+**Submitted:** 2026-10-04T13:24:32.671Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -83,12 +83,12 @@ int main() {
         vector<int> v(n);
         int sum = 0;
         int smallest_element = 1e6;
-        for (int i=0;i<n;i++) {
-            cin>>v[i];
-            sum+=v[i];
-            smallest_element=min(smallest_element, v[i]);
+        for (int i = 0; i < n; i++) {
+            cin >> v[i];
+            sum += v[i];
+            smallest_element = min(smallest_element, v[i]);
         }
-        cout<<sum-smallest_element<<endl;
+        cout << sum - smallest_element <<endl;
     }
 }
 
